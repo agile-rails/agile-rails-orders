@@ -1,6 +1,9 @@
-require "agile_rails_orders/version"
-require "agile_rails_orders/engine"
+require 'agile_rails_orders/version'
+require 'agile_rails_orders/engine'
 
+###############################################################################
+# Demonstration of external application added as a rails plugin gem.
+###############################################################################
 module AgileRailsOrders
 
 def self.routes
