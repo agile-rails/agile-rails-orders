@@ -1,0 +1,61 @@
+# Form for cost_center
+table: cost_center
+
+index:
+  filter: name, code, sector_type
+  actions: standard
+  
+  data_set:
+    actions: standard
+
+# 
+# Choose columns from
+# id,code,name,sector_id,sector_type,ar_user_id,created_at,updated_at,created_by,updated_by,active
+    columns:
+      10:  
+        name: code
+        width: 6%
+      20:  
+        name: name
+        width: 20%
+      30:
+        name: ar_user_id
+        eval: agile_name_for_id,ar_user,name
+        width: 20%
+      40:
+        name: center_type
+        eval: agile_text_for_value
+        width: 10%
+      100:
+        name: active
+        eval: agile_icon_for_boolean
+
+form:
+  actions: standard
+
+  fields:
+    10:
+      name: code
+      type: text_field
+      size: 8
+    20:
+      name: name
+      type: text_field
+      size: 50
+    30:
+      name: sector_id
+      type: select
+      choices:
+        eval: agile_choices_for('sector','name','id')
+    40:
+      name: center_type
+      type: select
+    50:
+      name: ar_user_id
+      type: select
+      choices:
+        eval: agile_choices_for('ar_user','name','id')
+
+    100:
+      name: active
+      type: check_box

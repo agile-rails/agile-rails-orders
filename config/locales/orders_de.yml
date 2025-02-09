@@ -1,0 +1,117 @@
+de:
+  helpers:
+    label:
+      partner:
+        table_title: Geschäftspartner
+        1basic: Basisdaten
+        2employees: Mitarbeiter
+
+        name: Kurzname
+        name_long: Langer Name
+        address: Adresse
+        post: Postleitzahl
+        country: Land
+        email: E-Mail-Adresse
+        phone: Telefonnummer
+        mobile: Mobilnummer
+        account: Bankkonto
+        vat_number: USt-IdNr
+        notes: Notizen
+        address_post: Adresse & Post
+
+      sector:
+        table_title: Unternehmensbereiche
+
+        name: Bereichsname
+        short_name: Kurzname
+        head_id: Bereichsleiter
+
+      cost_center:
+        table_title: Tabelle der Unternehmenskostenstellen
+        choices_for_center_type: 'Primär:1,Sekundär:2'
+
+        code: Code
+        name: Name
+        sector_id: Bereich
+        center_type: Typ
+        ar_user_id: Verantwortlich
+
+      order:
+        table_title: Bestellungen
+        1order: Bestellung
+        2items: Artikel
+
+        doc_number: Dokumentnummer
+        order_number: Bestellnummer
+        name: Beschreibung
+        proposer_id: Antragsteller
+        signer_id: Unterzeichner
+        sector_id: Bereich
+        cost_center_id: Kostenstelle
+        reason: Grund
+        partner_id: Partner
+        proposed_date: Antragsdatum
+        creation_date: Erstellungsdatum
+        comment: Kommentar
+        currency: Währung
+        value: Wert
+
+      order_item:
+        table_title: Bestellpositionen
+
+        name: Name
+        uom: Maßeinheit
+        amount: Menge
+        price: Preis
+        value: Wert
+
+    ##########################################################################################################
+    help:
+      label:
+        name: Kurzer Partnername
+        name_long: Langer Partnername
+        address: Partneradresse
+        post: Postleitzahl und Ortsname
+        country: Herkunftsland des Partners
+        email: E-Mail-Adresse des Partners
+        phone: Telefonnummer
+        mobile: Mobilnummer
+        account: Bankkonto
+        vat_number: USt-IdNr
+        notes: Verschiedene Notizen über den Partner
+        address_post: Adresse & Post
+
+      sector:
+        name: Beschreibender Name des Bereichs
+        short_name: Kurzer Name des Bereichs (Akronym)
+        head_id: Verantwortliche Person des Bereichs
+
+      cost_center:
+        code: Kostenstellencode
+        name: Beschreibender Name
+        sector_id: Kostenstelle gehört zu Bereich
+        center_type: Code-Typ
+        ar_user_id: Verantwortliche Person für diese Kostenstelle
+
+      order:
+        doc_number: Dokumentennummer
+        order_number: Bestellnummer
+        name: Kurze Bestellbeschreibung (Zweck)
+        proposer_id: Person, die die Bestellung vorschlägt
+        signer_id: Person, die die Bestellung unterzeichnet
+        sector_id: Bereichsname (Einheit)
+        cost_center_id: Primäre Kostenstelle für Bestellung definieren
+        reason: Zweck der Bestellung erklären
+        partner_id: Partner (Lieferant) der Waren
+        proposed_date: Datum, an dem das Dokument vorgeschlagen wurde
+        creation_date: Datum, an dem das Dokument erstellt (gedruckt) wurde
+        comment: Kommentar an Partner, wird auf der Bestellung gedruckt
+        currency: Währung
+        value: Gesamtwert der Waren
+
+      order_item:
+        name: Name des Artikels, der Waren, der Dienstleistung ...
+        uom: Maßeinheit
+        amount: Menge
+        price: Preis
+        value: Wert

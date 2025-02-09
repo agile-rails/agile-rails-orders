@@ -1,0 +1,134 @@
+# Form for orders
+table: order
+
+index:
+  filter: doc_number as text_field, order_number as text_field, name, partner_id, value as text_field
+  actions: standard
+
+  data_set:
+    actions: standard
+# 
+# Choose columns from
+# id,doc_number,order_number,name,proposer_id,signer_id,sector_id,cost_center_id,partner_id,proposed_date,creation_date,comment,currency,value,created_at,updated_at,created_by,updated_by
+    columns:
+
+      10:
+        name: order_number
+        width: 12%
+      20:
+        name: name
+        width: 25%
+      30:
+        name: created_at
+        width: 10%
+        format: D
+      40:
+        name: value
+        width: 10%
+        format: N2
+        align: right
+      50:
+        name: partner_id
+        eval: agile_name_for_id,partner,name
+        width: 40%
+        sort: n
+
+form:
+  actions:
+    standard: true
+    2: save
+
+    10:
+      type: ajax
+      caption: Order document
+      icon: picture-as-pdf
+      title: Download order document as PDF
+      action: run
+      control: OrderControl.order_to_pdf
+      active: OrderControl.button_to_pdf_active
+      show: always
+
+  tabs:
+    1order:
+      10:
+        name: doc_number
+        type: readonly
+        size: 8
+        group: 2
+      20:
+        name: order_number
+        type: readonly
+        size: 8
+      30:
+        name: proposed_date
+        type: readonly
+        format: D
+        size: 8
+        group: 2
+      40:
+        name: creation_date
+        type: readonly
+        format: D
+      50:
+        name: name
+        type: text_field
+        size: 80
+      60:
+        name: proposer_id
+        type: select
+        choices:
+          eval: Company.users_by_role_for_select('users')
+        group: 2
+      70:
+        name: signer_id
+        type: select
+        choices:
+          eval: Company.users_by_role_for_select('users')
+      80:
+        name: sector_id
+        type: select
+        choices:
+          eval: agile_choices_for('Sector','name','id')
+        group: 2
+      90:
+        name: cost_center_id
+        type: select
+        choices:
+          eval: CostCenter.choices_for_cost_center_in_sector
+        depend: sector_id
+      100:
+        name: reason
+        type: text_area
+        size: 80x5
+        line: bottom
+      200:
+        name: partner_id
+        type: text_autocomplete
+        search: partner.name
+        size: 80
+        with_new: partner
+
+      210:
+        name: comment
+        type: text_area
+        size: 80x5
+      220:
+        name: value
+        type: number_field
+        readonly: true
+        size: 10
+        format: N2
+        group: 2
+      230:
+        name: currency
+        type: text_field
+        size: 3
+        default: EUR
+
+    2items:
+      10:
+        name: order_items
+        caption: false
+        type: belongs_to
+        form_name: order_item
+        load: delay

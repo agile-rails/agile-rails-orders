@@ -1,0 +1,98 @@
+# Form for partner
+table: partner
+
+index:
+  filter: email,description,country,title,vat_number
+  actions: new, filter
+
+  data_set:
+    actions: standard
+#   table_style: 'width:150%;'
+#
+# Choose columns from
+# id,title,title_long,address,post,country,email,phone,mobile,account,vat_number,notes,created_at,updated_at,created_by,updated_by,active
+    columns:
+      10:
+        name: name
+        width: 20%
+      20:
+        name: address_post
+        width: 20%
+        sort: n
+      30:
+        name: phone
+        width: 10%
+      40:
+        name: email
+      50:
+        name: country
+        eval: partner.country_for
+        width: 10%
+      60:
+        name: updated_at
+        format: D
+        width: 10%
+      70:
+        name: active
+        eval: agile_icon_for_boolean
+        width: 5%
+
+form:
+  actions: standard
+
+  fields:
+    10:
+      name: name
+      type: text_field
+      size: 50
+    20:
+      name: name_long
+      type: text_field
+      size: 90
+    30:
+      name: address
+      type: text_field
+      size: 30
+      group: 2
+    40:
+      name: post
+      type: text_autocomplete
+      search: partner..choices_for_post
+      is_id: no
+      size: 30
+    50:
+      name: country
+      type: select
+      choices:
+        eval: ArUser.choices_for_country
+    60:
+      name: email
+      type: text_field
+      size: 30
+      html:
+        type: email
+    70:
+      name: phone
+      type: text_field
+      size: 10
+      group: 2
+    80:
+      name: mobile
+      type: text_field
+      size: 10
+    90:
+      name: vat_number
+      type: text_field
+      size: 10
+      group: 2
+    100:
+      name: account
+      type: text_field
+      size: 30
+    110:
+      name: notes
+      type: text_area
+      size: 90x10
+    120:
+      name: active
+      type: check_box

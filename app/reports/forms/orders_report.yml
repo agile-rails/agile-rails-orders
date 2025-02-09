@@ -1,0 +1,107 @@
+
+# Form
+table: ar_memory
+control: orders_report
+
+form:
+  title:
+    new: Orders report for an interval
+
+  fields:
+    10:
+      type: date_picker
+      name: date_from
+      caption: Starting date
+      default:
+        eval: I18n.l(Time.now.to_date)
+      size: 10
+      html:
+        required: true
+
+    20:
+      type: date_picker
+      name: date_to
+      caption: Ending date
+      size: 10
+      html:
+        required: true
+
+    30:
+      name: sector_id
+      caption: helpers.label.order.sector_id
+      type: select
+      choices: eval agile_choices_for('Sector','name','id')
+      include_blank: true
+      line: bottom
+
+##########
+
+report:
+  table: ar_temp
+  title: agile.result
+  control: orders_report
+
+  index:
+    data_set:
+      filter: data_filter
+      tr_class:
+        eval: "record['class'] ? record['class'] : ''"
+      per_page: 0
+
+      columns:
+        10:
+          name: order_number
+          caption: helpers.label.order.order_number
+          width: 10%
+        20:
+          name: creation_date
+          caption: helpers.label.order.creation_date
+          width: 8%
+        30:
+          name: proposer
+          caption: helpers.label.order.proposer_id
+        40:
+          name: partner
+          caption: helpers.label.order.partner_id
+          width: 20%
+        50:
+          name: value
+          caption: helpers.label.order.value
+          width: 10%
+
+##########
+
+  print:
+    font_size: 9
+    header_style:
+      color: ff0000
+      background_color: ff0000
+    cell_style:
+      padding: 2
+      align: :left
+      border_width: 0.5
+
+    10:
+      name: order_number
+      caption: helpers.label.order.order_number
+    20:
+      name: creation_date
+      caption: helpers.label.order.creation_date
+    30:
+      name: proposer
+      caption: helpers.label.order.proposer_id
+    40:
+      name: partner
+      caption: helpers.label.order.partner_id
+      style:
+        width: 150
+    50:
+      name: value
+      caption: helpers.label.order.value
+      style:
+        width: 50
+        align: :right
+
+  css: '
+.total {font-weight: 600;border-top: 2px solid #253858;}
+'

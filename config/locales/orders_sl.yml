@@ -1,0 +1,33 @@
+sl:
+  helpers:
+    label:
+      company:
+        table_title: Poslovni subjekti
+
+        title: Kratek naziv
+        title_long: Dolg naziv
+        address: Naslov
+        post: Pošta
+        country: Država
+        email: e-Naslov
+        phone: Telefon
+        mobile: Mobitel
+        account: Bančni račun
+        vat_number: Davčna številka
+        description: Opis
+        address_post: Naslov in pošta
+
+    help:
+      company:
+        title: Kratek naziv podjetja
+        title_long: Doljši naziv podjetja
+        address: Naslov podjetja
+        post: Poštna številka in naziv podjetja
+        country: Država
+        email: e-Naslov za komunikacijo
+        phone: Telefonska številka
+        mobile: Mobitel številka
+        account: Bančni račun
+        vat_number: Davčna številka
+        description: Opis podjetja
+        address_post: Naslov in pošta

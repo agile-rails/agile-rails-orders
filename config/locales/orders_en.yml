@@ -1,0 +1,117 @@
+en:
+  helpers:
+    label:
+      partner:
+        table_title: Business partners
+
+        name: Short name
+        name_long: Long name
+        address: Address
+        post: Post
+        country: Country
+        email: e-Mail address
+        phone: Phone number
+        mobile: Mobile number
+        account: Bank account
+        vat_number: VAT number
+        notes: Notes
+        address_post: Address & post
+
+      sector:
+        table_title: Company sectors
+
+        name: Sector name
+        short_name: Short name
+        head_id: Head of sector
+
+      cost_center:
+        table_title: Table of company cost centers
+        choices_for_center_type: 'Primary:1,Secondary:2'
+
+        code: Code
+        name: Name
+        sector_id: Sector
+        center_type: Type
+        ar_user_id: Responsible
+
+
+      order:
+        table_title: Orders
+        1order: Order
+        2items: Items
+
+        doc_number: Document number
+        order_number: Order number
+        name: Description
+        proposer_id: Proposing
+        signer_id: Signing
+        sector_id: Sector
+        cost_center_id: Cost center
+        reason: Reason
+        partner_id: Partner
+        proposed_date: Proposal date
+        creation_date: Creation date
+        comment: Comment
+        currency: Currency
+        value: Value
+
+      order_item:
+        table_title: Order items
+
+        name: Name
+        uom: UOM
+        amount: Amount
+        price: Price
+        value:
+
+
+    ##########################################################################################################
+    help:
+      partner:
+        name: Short partner name
+        name_long: Long partner name
+        address: Partner's address
+        post: Post number and post name
+        country: Partners country of origin
+        email: Partner's e-Mail address
+        phone: Telephone number
+        mobile: Mobile number
+        account: Bank account
+        vat_number: VAT number
+        notes: Random notes about partner
+        address_post: Address & post
+
+      sector:
+        name: Sector descriptive name
+        short_name: Sector's short name (acronym)
+        head_id: Head (chief) person who is responsible for sector
+
+      cost_center:
+        code: Cost center code
+        name: Descriptive name
+        sector_id: Cost center belongs to sector
+        center_type: Type of code
+        ar_user_id: The person responsible for this cost center
+
+      order:
+        doc_number: Document sequence number
+        order_number: Order number
+        name: Short order description(purpose)
+        proposer_id: Person proposing order
+        signer_id: Person which will sign order
+        sector_id: Sector name (unit)
+        cost_center_id: Define primary cost center for order
+        reason: Explain the purpose of order
+        partner_id: Partner (supplier) of goods
+        proposed_date: Date when document was proposed
+        creation_date: Date when document was created (printed)
+        comment: Comment to partner, will be printed on the order
+        currency: Currency
+        value: Total value of goods
+
+      order_item:
+        name: Name of item, goods, service ....
+        uom: Unit of measure
+        amount: Amount
+        price: Price
+        value: Value

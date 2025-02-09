@@ -1,0 +1,64 @@
+# Form for order_item
+table: order_item
+
+index:
+  actions: standard
+  
+  data_set:
+    actions: edit,delete,duplicate
+
+# 
+# Choose columns from
+# id,order_id,name,uom,amount,price,value,created_at,updated_at,created_by,updated_by
+    columns:
+      10:
+        name: name
+        width: 20%
+      20:
+        name: uom
+        width: 5%
+      30:
+        name: amount
+        width: 10%
+        align: right
+        format: N2
+      40:
+        name: price
+        width: 10%
+        align: right
+        format: N2
+      50:
+        name: value
+        width: 10%
+        align: right
+        format: N2
+      60:
+        name: created_at
+        format: D
+
+form:
+  actions: standard
+
+  fields:
+    20:
+      name: name
+      type: text_field
+      size: 80
+    30:
+      name: uom
+      type: text_field
+      size: 5
+    40:
+      name: amount
+      type: number_field
+      size: 10
+      format: N2
+    50:
+      name: price
+      type: number_field
+      size: 10
+      format: N2
+
+    100:
+      name: order_id
+      type: hidden_field

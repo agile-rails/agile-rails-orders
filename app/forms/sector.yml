@@ -1,0 +1,43 @@
+# Form for sector
+table: sector
+
+index:
+  actions: standard
+  
+  data_set:
+    actions: standard
+#
+# Choose columns from
+# id,name,head_id,created_at,updated_at,created_by,updated_by,active
+    columns:
+      10:
+        name: name
+        width: 20%
+#      20:
+#        name: short_name
+#        width: 5%
+      30:
+        name: head_id
+        eval: agile_name_for_id,ar_user,name
+        width: 20%
+      50:
+        name: active
+        eval: agile_icon_for_boolean
+
+form:
+  actions: standard
+
+  fields:
+    10:
+      name: name
+      type: text_field
+      size: 40
+    20:
+      name: head_id
+      type: select
+      choices:
+        eval: agile_choices_for('ar_user', 'name', 'id')
+
+    100:
+      name: active
+      type: check_box
