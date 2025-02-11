@@ -79,4 +79,12 @@ def self.button_to_pdf_active(env)
   !!OrderItem.find_by(order_id: env.params[:id])
 end
 
-end 
+###########################################################################
+# Run some job and return a message.
+###########################################################################
+def some_job_to_run
+  #  render json: "<script>alert('Job has ended succefully!');history.back();</script>"
+  render json: { alert: 'Job has ended succefully!' }
+end
+
+end

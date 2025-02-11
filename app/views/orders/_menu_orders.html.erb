@@ -63,10 +63,10 @@
     </ul>
   </li>
 
-  <!-- Run some job -->
   <li class="menu-item">
-    <%= agile_link_to 'Run something', 'cog', { t: 'order', action: :run, control: 'big_app_control.run_something' },
-                   'data-confirm' => 'Are you sure', title: 'Run a job.' %>
+    <%= agile_ajax_link_to 'Run something', 'cog', { t: 'order', action: :run, control: 'order_control.some_job_to_run' },
+                           'data-confirm' => 'Are you sure', title: 'Run a job.' %>
   </li>
+
 </ul>
 </div>
