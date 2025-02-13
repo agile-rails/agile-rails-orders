@@ -6,21 +6,18 @@ It demonstrates usage of AgileRails for an application which is moved into isola
 
 
 ## Usage
-How to use my plugin.
+How to use the plugin.
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "agile_rails_orders", git: 'https://github.com/agile-rails/agile-rails-orders'
+gem 'agile_rails_orders', git: 'https://github.com/agile-rails/agile-rails-orders'
 ```
 
-And then execute:
+and then run:
 ```bash
 $ bundle update
 ```
-## Contributing
-Contribution directions go here.
-
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
