@@ -1,7 +1,7 @@
 require_relative 'lib/agile_rails_orders/version'
 
 Gem::Specification.new do |spec|
-  spec.name        = 'agile-rails-orders'
+  spec.name        = 'agile_rails_orders'
   spec.version     = AgileRailsOrders::VERSION
   spec.authors     = ['Damjan Rems']
   spec.email       = ['damjan.rems@gmail.com']
@@ -24,5 +24,5 @@ Gem::Specification.new do |spec|
   spec.files = Dir['{app,config,db,lib}/**/*'] + %w[MIT-LICENSE Rakefile README.md agile_rails_orders.gemspec]
 
   spec.add_dependency 'rails' # , ">= 7"
-  spec.add_dependency 'agile-rails' # , "> 0.0.1"
+  spec.add_dependency 'agile_rails' # , "> 0.0.1"
 end
