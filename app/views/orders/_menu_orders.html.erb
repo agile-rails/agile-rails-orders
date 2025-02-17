@@ -8,7 +8,7 @@
 <ul>
   <!-- top level -->
   <li class="menu-item active">
-    <%= agile_link_to 'My orders', 'description-o', { t: 'Order' }, target: 'iframe_edit', title: 'Purchase orders' %>
+    <%= agile_link_to 'My orders', 'description-o', { t: :order }, target: 'iframe_edit', title: 'Purchase orders' %>
   </li>
 
   <!-- submenu -->
@@ -16,7 +16,7 @@
     <div><%= fa_icon('summarize-o') %>Reports</div>
     <ul>
       <li class="menu-item">
-        <%= agile_link_to 'Orders report', 'print', { t: 'ar_memory', f: 'orders_report', action: :new },
+        <%= agile_link_to 'Orders report', 'print', { t: :ar_memory, f: 'orders_report', action: :new },
                           target: 'iframe_edit', title: 'Create report of orders mad on specified interval' %>
       </li>
 
@@ -27,15 +27,15 @@
 
         <ul>
           <li class="menu-item">
-            <%= agile_link_to 'Report 11', 'print', { t: 'ar_memory', f: 'report_11', action: :new },
+            <%= agile_link_to 'Report 11', 'print', { t: :ar_memory, f: 'report_11', action: :new },
                            target: 'iframe_edit', title: 'report_11 tittle' %>
           </li>
           <li class="menu-item">
-            <%= agile_link_to 'Report 12', 'print', { t: 'ar_memory', f: 'report_12', action: :new },
+            <%= agile_link_to 'Report 12', 'print', { t: :ar_memory, f: 'report_12', action: :new },
                            target: 'iframe_edit', title: 'report_12 tittle' %>
           </li>
           <li class="menu-item">
-            <%= agile_link_to 'Report 13', 'print', { t: 'ar_memory', f: 'report_13', action: :new },
+            <%= agile_link_to 'Report 13', 'print', { t: :ar_memory, f: 'report_13', action: :new },
                            target: 'iframe_edit', title: 'report_13 tittle' %>
           </li>
         </ul>
@@ -50,22 +50,27 @@
     <div><%= fa_icon('database-o') %>Tables</div>
     <ul>
       <li class="menu-item">
-        <%= agile_link_to 'Partners', 'domain-o', { t: 'partner' }, target: 'iframe_edit', title: 'Table of partners' %>
+        <%= agile_link_to 'Partners', 'domain-o', { t: :partner }, target: 'iframe_edit', title: 'Table of partners' %>
       </li>
       <li class="menu-item">
-        <%= agile_link_to 'Sectors', 'apartment-o', { t: 'sector' },
+        <%= agile_link_to 'Sectors', 'apartment-o', { t: :sector },
                        target: 'iframe_edit', title: 'My company sectors' %>
       </li>
       <li class="menu-item">
-        <%= agile_link_to 'Cost centers', 'grid_view-o', { t: 'cost_center' },
+        <%= agile_link_to 'Cost centers', 'grid_view-o', { t: :cost_center },
                        target: 'iframe_edit', title: "My company's cost centers" %>
       </li>
     </ul>
   </li>
 
   <li class="menu-item">
-    <%= agile_ajax_link_to 'Run something', 'cog', { t: 'order', action: :run, control: 'order_control.some_job_to_run' },
+    <%= agile_ajax_link_to 'Run something', 'cog', { t: :order, action: :run, control: 'order_control.some_job_to_run' },
                            'data-confirm' => 'Are you sure', title: 'Run a job.' %>
+  </li>
+
+  <li class="menu-item">
+    <%= agile_link_to 'Settings', 'grid_view-o', { t: :ar_setup, application_name: 'orders' },
+                      target: 'iframe_edit', title: "My company's cost centers" %>
   </li>
 
 </ul>
